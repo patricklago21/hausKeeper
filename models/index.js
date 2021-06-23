@@ -1,4 +1,5 @@
 // import all models
-const User = require('./User');
+const Client = require('./Client');
+const Hauskeepr = require('./Hauskeepr');
 
-module.exports = { User };
+module.exports = { Client, Hauskeepr };

@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 // create our User model
-class User extends Model {
+class Client extends Model {
   // set up method to run on instance data (per user) to check password
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
@@ -11,7 +11,7 @@ class User extends Model {
 }
 
 // create fields/columns for User model
-User.init(
+Client.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -35,8 +35,51 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4]
+        len: [8, 32]
       }
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+      validate: {
+        isAlphanumeric: true
+      }
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+      validate: {
+        isAlphanumeric: true
+      }
+    },
+    date_of_birth: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        isDate: true
+      }
+    },
+    address_line_1: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    address_line_2: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
@@ -53,11 +96,11 @@ User.init(
       }
     },
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'client'
   }
 );
 
-module.exports = User;
+module.exports = Client;
