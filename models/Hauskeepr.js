@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-// create our User model
+// create our Hauskeepr model
 class Hauskeepr extends Model {
     // set up method to run on instance data (per user) to check password
     checkPassword(loginPw) {
@@ -10,7 +10,7 @@ class Hauskeepr extends Model {
     }
 }
 
-// create fields/columns for User model
+// create fields/columns for Hauskeepr model
 Hauskeepr.init(
     {
         id: {
