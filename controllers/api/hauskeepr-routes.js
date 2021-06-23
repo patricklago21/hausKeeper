@@ -64,7 +64,9 @@ router.put('/:id', (req, res) => {
       address_line_2: req.body.address_line_2,
       city: req.body.city,
       zip_code: req.body.zip_code,
-      state: req.body.state
+      state: req.body.state,
+      profession_id: req.body.profession_id,
+      hourly_rate: req.body.hourly_rate
     },
     {
       where: {
