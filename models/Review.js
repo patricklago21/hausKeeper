@@ -6,7 +6,7 @@ class Review extends Model {
 }
 
 // create fields/columns for Review model
-REview.init(
+Review.init(
     {
         id: {
             type: DataTypes.INTEGER,
