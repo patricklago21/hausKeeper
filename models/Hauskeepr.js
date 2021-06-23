@@ -81,7 +81,7 @@ Hauskeepr.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        professional_id: {
+        profession_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
