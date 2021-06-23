@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "hauskeepr",
-=======
-  "name": "hausKeepr",
->>>>>>> 311fe64bc2836f2ff81f28565000abb043f1c940
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
