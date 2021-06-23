@@ -85,7 +85,7 @@ router.put('/:id', (req, res) => {
 
 // delete a client
 router.delete('/:id', (req, res) => {
-  Post.destroy({
+  Client.destroy({
     where: { id: req.params.id }
   })
   .then(dbData => {
