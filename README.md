@@ -6,7 +6,7 @@ Our mission is to provide economic empowerment in this changing world. TheKeeprs
 
 - Create an interface that would connect modern day busy professionals to the best housekeepers near them so that they can obtain house work services through clicks of a button. 
 - Create a community of individuals including cleaners, gardeners, window cleaners, and other skilled housekeepers.
-- Make use of technology in a way that is vital for individuals with economic needs and develop trust among communities. 
+- Make use of technology in a way that is helpful for individuals with economic needs and develop trust among communities. 
 
 # Description
 
