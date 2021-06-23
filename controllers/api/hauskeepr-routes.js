@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { HausKeepr } = require('../../models');
+const { Hauskeepr } = require('../../models');
 
-// get all HausKeeprs
+// get all Hauskeeprs
 router.get('/', (req, res) => {
-  HausKeepr.findAll({
+  Hauskeepr.findAll({
     attributes: { exclude: ['password'] }
   })
   .then(dbData => res.json(dbData))
@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
   });
 });
 
-// get HausKeepr by id
+// get Hauskeepr by id
 router.get('/:id', (req, res) => {
-  HausKeepr.findOne({
+  Hauskeepr.findOne({
     where: { id: req.params.id },
     attributes: { exclude: ['password'] }
   })
@@ -26,9 +26,9 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// create a HausKeepr
+// create a Hauskeepr
 router.post('/', (req, res) => {
-  HausKeepr.create({
+  Hauskeepr.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
@@ -50,9 +50,9 @@ router.post('/', (req, res) => {
   })
 });
 
-// update a HausKeepr
+// update a Hauskeepr
 router.put('/:id', (req, res) => {
-  HausKeepr.update(
+  Hauskeepr.update(
     {
       // username: req.body.username, -- Once username is set, it can't be changed
       email: req.body.email,
@@ -76,7 +76,7 @@ router.put('/:id', (req, res) => {
   )
   .then(dbData => {
     if(!dbData) {
-      res.status(404).json({message:'No HausKeepr found with this id'});
+      res.status(404).json({message:'No Hauskeepr found with this id'});
       return;
     }
     res.json(dbData);
@@ -87,14 +87,14 @@ router.put('/:id', (req, res) => {
   });
 });
 
-// delete a HausKeepr
+// delete a Hauskeepr
 router.delete('/:id', (req, res) => {
-  HausKeepr.destroy({
+  Hauskeepr.destroy({
     where: { id: req.params.id }
   })
   .then(dbData => {
     if(!dbData) {
-      res.status(404).json({message:'No HausKeepr found with this id'});
+      res.status(404).json({message:'No Hauskeepr found with this id'});
       return;
     }
     res.json(dbData);
