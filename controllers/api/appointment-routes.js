@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     notes: req.body.notes,
     status: req.body.status,
     hours: req.body.hours,
-    total_cost: req.total_cost
+    total_cost: req.body.total_cost
   })
   .then(dbData => res.json(dbData))
   .catch(err => {
@@ -51,7 +51,7 @@ router.put('/:id', (req, res) => {
         notes: req.body.notes,
         status: req.body.status,
         hours: req.body.hours,
-        total_cost: req.total_cost
+        total_cost: req.body.total_cost
     },
     {
       where: {
