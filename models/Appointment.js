@@ -14,7 +14,7 @@ Appointment.init(
             autoIncrement: true
         },
         datetime: {
-            type: DataTypes.datetime,
+            type: DataTypes.DATE,
             allowNull: false
         },
         client_id: {
@@ -33,14 +33,14 @@ Appointment.init(
                 key: 'id'
             }
         },
-        chore_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'chore',
-                key: 'chore_id'
-            }
-        },
+        // chore_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'chore',
+        //         key: 'chore_id'
+        //     }
+        // },
         notes: {
             type: DataTypes.STRING,
             allowNull: true,
