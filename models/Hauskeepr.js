@@ -111,7 +111,7 @@ Hauskeepr.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'client'
+        modelName: 'hauskeepr'
     }
 );
 
