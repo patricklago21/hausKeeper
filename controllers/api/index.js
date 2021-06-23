@@ -1,11 +1,13 @@
 const router = require('express').Router();
 
-const userRoutes = require('./client-routes.js');
-const hauskeeprRoutes = require('./hauskeepr-routes.js');
-const professionRoutes = require('./prefession-routes.js');
+const userRoutes = require('./client-routes');
+const hauskeeprRoutes = require('./hauskeepr-routes');
+const professionRoutes = require('./profession-routes');
+const appointmentRoutes = require('./appointment-routes');
 
 router.use('/clients', userRoutes);
 router.use('/hauskeeprs', hauskeeprRoutes);
 router.use('/professions', professionRoutes);
+router.use('/appointments', appointmentRoutes);
 
 module.exports = router;
