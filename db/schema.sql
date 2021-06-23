@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS cool_db;
+DROP DATABASE IF EXISTS hauskeepr_db;
 
-CREATE DATABASE cool_db;
+CREATE DATABASE hauskeepr_db;
