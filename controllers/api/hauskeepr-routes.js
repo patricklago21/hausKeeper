@@ -1,10 +1,19 @@
 const router = require('express').Router();
-const { Hauskeepr } = require('../../models');
+const sequelize = require('../../config/connection');
+const { Hauskeepr, Client, Review, Appointment } = require('../../models');
 
 // get all Hauskeeprs
 router.get('/', (req, res) => {
   Hauskeepr.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { 
+      exclude: ['password'],
+      include: [
+        [
+          sequelize.literal('(SELECT AVG(stars) FROM review WHERE review.hauskeepr_id = hauskeepr.id)'),
+          'rating'
+        ]
+      ]
+    }
   })
   .then(dbData => res.json(dbData))
   .catch(err => {
@@ -17,7 +26,25 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Hauskeepr.findOne({
     where: { id: req.params.id },
-    attributes: { exclude: ['password'] }
+    attributes: { 
+      exclude: ['password'],
+      include: [
+        [
+          sequelize.literal('(SELECT AVG(stars) FROM review WHERE review.hauskeepr_id = hauskeepr.id)'),
+          'rating'
+        ]
+      ]
+    },
+    include: [
+      {
+        model: Review,
+        attributes: ['id','review','stars','createdAt','updatedAt']
+      },
+      {
+        model: Appointment,
+        attributes: ['id','datetime','client_id','hauskeepr_id','notes','status','hours','total_cost']
+      }
+    ]
   })
   .then(dbData => res.json(dbData))
   .catch(err => {
