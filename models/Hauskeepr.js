@@ -8,6 +8,19 @@ class Hauskeepr extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
+
+    // Get the Hauskeepr rating
+    static getRating(body) {
+        return Hauskeepr.findOne({
+            where: { id: body.id },
+            attributes: [
+                [
+                    sequelize.literal('SELECT AVG(stars) FROM review WHERE review.hauskeepr_id = hauskeepr.id'),
+                    'rating'
+                ]
+            ]
+        })
+    }
 }
 
 // create fields/columns for Hauskeepr model

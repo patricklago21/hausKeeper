@@ -37,7 +37,7 @@ Appointment.belongsTo(Hauskeepr, {
     foreignKey: 'hauskeepr_id'
 });
 
-Profession.belongsTo(Hauskeepr, {
+Hauskeepr.belongsTo(Profession, {
     foreignKey: 'profession_id'
 });
 
