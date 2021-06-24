@@ -11,37 +11,47 @@
 <body>
   <div class="wrapper">
     <main>
-      <nav class="navbar">
+      <!-- navbar -->
+      <nav class="navbar sticky-top bg-white border-bottom">
         <div class="container-fluid align-middle">
-            <a href="#" class="navbar-brand">hausKeepr</a>
 
-            <div class="justify-content-end">
-                <ul class="navbar-nav container-fluid d-flex flex-row">
-                    <li class="nav-item p-3">Search</li>
-                    <li class="nav-item p-3">Sign-Up</li>
-                    <li class="nav-item p-3">Dashboard</li>
-                    <li class="nav-item p-3">Support</li>
-                </ul>
+          <!-- inserted a logo here -->
+          <nav class="navbar navbar-light bg-white">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="../public/images/keeprlogo.png" alt="" width="40" height="34"
+                  class="d-inline-block align-text-top">hausKeepr
+              </a>
             </div>
+          </nav>
+
+          <div class="justify-content-end">
+            <ul class="navbar-nav container-fluid d-flex flex-row">
+              <!-- <li class="nav-item p-3">Search</li> -->
+              <li class="nav-item p-3">Sign-Up</li>
+              <li class="nav-item p-3">Login</li>
+              <li class="nav-item p-3">Support</li>
+            </ul>
+          </div>
         </div>
       </nav>
-      
+
       {{{ body }}}
 
       <!-- footer -->
-    <nav class="navbar">
+      <nav class="navbar">
         <div class="container-fluid align-middle">
-            <a href="#" class="navbar-brand">hausKeepr</a>
+          <a href="#" class="navbar-brand">hausKeepr</a>
 
-            <div class="justify-content-end">
-                <ul class="navbar-nav container-fluid d-flex flex-row">
-                    <li class="nav-item p-3">About Us</li>
-                    <li class="nav-item p-3">Contact Us</li>
-                </ul>
-            </div>
+          <div class="justify-content-end">
+            <ul class="navbar-nav container-fluid d-flex flex-row">
+              <li class="nav-item p-3">About Us</li>
+              <li class="nav-item p-3">Contact Us</li>
+            </ul>
+          </div>
         </div>
-    </nav>
-      
+      </nav>
+
     </main>
   </div>
 </body>
