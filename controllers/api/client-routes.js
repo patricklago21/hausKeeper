@@ -101,4 +101,36 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.post('/login', (req, res) => {
+  Client.findOne({
+    where: { 
+      username: req.body.username
+    }
+  })
+  .then(dbData => {
+    if (!dbData) {
+      res.status(400).json({ message: 'Incorrect username or password' });
+      return;
+    }
+
+    const validPassword = dbData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect username or password' });
+      return;
+    }
+
+    req.session.save(() => {
+      // declare session variables
+      req.session.user_id = dbData.id;
+      req.session.username = dbData.username;
+      req.session.loggedIn = true;
+      res.json({ user: dbData, message: 'You are now logged in!' });
+    });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 module.exports = router;
