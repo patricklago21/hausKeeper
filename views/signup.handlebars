@@ -7,7 +7,7 @@
     <div class="row g-5">
     
         <div class="col-md-8 col-lg-8 mx-auto">
-            <form class="needs-validation" novalidate>
+            <form class="signup-form">
                 <div class="row g-3">
                     <div class="col-sm-6">
                         <label for="firstName" class="form-label">First name</label>
@@ -34,6 +34,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-12">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group has-validation">
+                            <input type="password" class="form-control" id="password" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Your password is required.
+                            </div>
+                        </div>
+                    </div>
     
                     <div class="col-12">
                         <label for="email" class="form-label">Email</label>
@@ -44,7 +54,7 @@
                     </div>
     
                     <div class="col-12">
-                        <label for="address" class="form-label">Address</label>
+                        <label for="address" class="form-label">Address Line 1</label>
                         <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
@@ -52,7 +62,7 @@
                     </div>
     
                     <div class="col-12">
-                        <label for="address2" class="form-label">Address 2 <span
+                        <label for="address2" class="form-label">Address Line 2<span
                                 class="text-muted">(Optional)</span></label>
                         <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                     </div>
@@ -99,3 +109,5 @@
         </div>
     </div>
 </div>
+
+<script src="/javascript/signup.js"></script>
