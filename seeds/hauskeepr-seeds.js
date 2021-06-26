@@ -2,6 +2,21 @@ const sequelize = require('../config/connection');
 const { Hauskeepr } = require('../models');
 
 const hauskeeprdata = [{
+        username: 'anghiari',
+        email: 'anghiari123456@gmail.com',
+        password: 'p@55w0rd',
+        first_name: 'leonardo',
+        last_name: 'da vinci',
+        date_of_birth: '02/23/1800',
+        address_line_1: '80 Strada Anchiano',
+        address_line_2: 'Milan',
+        city: 'Vinci',
+        zip_code: '82335',
+        state: 'HI',
+        profession_id: 3,
+        hourly_rate: 19.75
+    },
+    {
         username: 'ursula',
         email: 'ursula@gmail.com',
         password: 'p@55w0rd',
@@ -18,7 +33,7 @@ const hauskeeprdata = [{
     },
     {
         username: 'sebastian',
-        email: 'sebastian@gmail.com',
+        email: 'anghiari1800@gmail.com',
         password: 'p@55w0rd',
         first_name: 'Sebastian',
         last_name: 'Crab',
@@ -62,9 +77,9 @@ const hauskeeprdata = [{
         hourly_rate: 7.75
     },
     {
-        username: 'soairse',
+        username: 'sursha',
         email: 'soairse@gmail.com ',
-        password: 'password1',
+        password: 'password',
         first_name: 'Soairse',
         last_name: 'Ronan',
         date_of_birth: '09/17/1992',
