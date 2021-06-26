@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Hauskeepr, Client, Review, Appointment } = require('../../models');
+const { Hauskeepr, Client, Review, Appointment, Profession } = require('../../models');
 
 // get all Hauskeeprs
 router.get('/', (req, res) => {
@@ -13,7 +13,21 @@ router.get('/', (req, res) => {
           'rating'
         ]
       ]
-    }
+    },
+    include: [
+      {
+        model: Review,
+        attributes: ['id','review','stars','createdAt','updatedAt']
+      },
+      {
+        model: Appointment,
+        attributes: ['id','datetime','client_id','hauskeepr_id','notes','status','hours','total_cost']
+      },
+      {
+        model: Profession,
+        attributes: ['profession_name']
+      }
+    ]
   })
   .then(dbData => res.json(dbData))
   .catch(err => {
@@ -43,6 +57,10 @@ router.get('/:id', (req, res) => {
       {
         model: Appointment,
         attributes: ['id','datetime','client_id','hauskeepr_id','notes','status','hours','total_cost']
+      },
+      {
+        model: Profession,
+        attributes: ['profession_name']
       }
     ]
   })
