@@ -34,7 +34,9 @@ router.post('/', (req, res) => {
     hours: req.body.hours,
     total_cost: req.body.total_cost
   })
-  .then(dbData => res.json(dbData))
+  .then(dbData => {
+    res.json(dbData);
+  })
   .catch(err => {
     console.log(err);
     res.status(500).json(err);

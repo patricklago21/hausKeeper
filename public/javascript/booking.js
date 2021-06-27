@@ -2,6 +2,27 @@ $(function () {
   $("#appointment_date").datepicker({minDate: 1});
 });
 
+async function notifyHausKeepr(hauskeepr_id) {
+  const response = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({ 
+        hauskeepr_email: hauskeepr.email,
+        client_email: window.sessionStorage.getItem('email'),
+        hauskeepr_username: hauskeepr.username
+      }),
+      headers: {
+          "Content-Type": "application/json"
+      }
+  });
+
+  if (response.ok) {
+    // document.location.reload();
+  } else {
+    alert ("Something went wrong");
+  }
+
+}
+
 async function appointmentFormHandler(event) {
   event.preventDefault();
 
@@ -33,7 +54,7 @@ async function appointmentFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.reload();
+      await notifyHausKeepr(hauskeepr_id);
     } else {
       alert(response.statusText);
     }
