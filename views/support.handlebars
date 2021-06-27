@@ -1,0 +1,37 @@
+<div class="container">
+        <!-- <h1 class="brand"><span>hausKeepr</span> Tech Support</h1> -->
+        <div class="wrapper animated bounceInLeft">
+            <div class="company-info">
+                <img src="./images/keeprlogo.png" alt="" width="50" height="44" class="d-inline-block align-text-top text-primary">
+
+                <ul>
+                    <li><i class="fa fa-road"></i> 99 Hummingbird Street, Honolulu, HI</li>
+                    <li><i class="fa fa-phone"></i> (555) 555-5555</li>
+                    <li><i class="fa fa-envelope"></i> emailus@hauskeepr.com</li>
+                </ul>
+            </div>
+
+            <div class="contact_form">
+                <h2 class="contact_form__title">Contact Us</h2>
+                <form method="POST" action="/api/support/sendemail">
+                    <div class="contact_form__inputGroup">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Please enter your name" />
+                    </div>
+                    <div class="contact_form__inputGroup">
+                        <label>Company</label>
+                        <input type="text" name="company" placeholder="Please enter your company" />
+                    </div>
+                    <div class="contact_form__inputGroup">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Please enter your email" />
+                    </div>
+                    <div class="contact_form__inputGroup">
+                        <label>Message</label>
+                        <input type="text" name="message" placeholder="Please provide a short message here" />
+                    </div>
+                    <button class="contact_form__submitBtn" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
