@@ -54,7 +54,7 @@ Appointment.init(
             allowNull: false
         },
         total_cost: {
-            type: DataTypes.DECIMAL(0,2),
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false
         }
     },
