@@ -1,56 +1,43 @@
 <div class="container">
     <div class="row py-lg-5 border-bottom">
         <div class="col-lg-6 col-md-8 mx-auto justify-content-center text-center">
-            <h2 class="fw-light m-1">{{ Hauskeepr Full Name }}</h2>
-            <h3 class="fw-light m-1">{{ Profession }}</h3>
-            <p>Calendar plugin here</p>
-            <button type="button" class="btn btn-primary m-1">Book Now</button>
+            <h2 class="fw-light m-1">{{ hauskeepr.first_name}}</h2>
+            <h3 class="fw-light m-1">{{ hauskeepr.profession.profession_name }}</h3>
+            <p>Hourly rate: ${{hauskeepr.hourly_rate}}</p>
+            <form name="book-form" class="book-form">
+                <div class="form-floating mb-3">
+                    <input type="text" name="appointment_date" id="appointment_date" class="form-control" data-provide="datepicker">
+                    <label for="appointment_date">Appointment Date</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="appointment_time" id="appointment_time" class="form-control">
+                    <label for="appointment_time">Appointment Time</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="appointment_hours" id="appointment_hours" class="form-control">
+                    <label for="appointment_hours">Length of appointment (in hours)</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="appointment_notes" id="appointment_notes" class="form-control">
+                    <label for="appointment_notes">Description of the appointment</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="appointment_cost" id="appointment_cost" class="form-control" readonly>
+                    <label for="appointment_cost">Estimated cost</label>
+                </div>
+                <input type="hidden" name="hourly_rate" id="hourly_rate" value="{{hauskeepr.hourly_rate}}">
+                <button type="submit" class="btn btn-primary m-1">Book Now</button>
+            </form>
         </div>
     </div>
-
 
     <!-- hauskeepr cards -->
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card border-primary m-2">
-                <div class="card-header text-primary">Review from {{ First Name }}</div>
-                <div class="card-body text-secondary">
-                    <p class="text-warning">Rating: {{ Rating }}/5</p>
-                    <p>{{ Review }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card border-primary m-2">
-                <div class="card-header text-primary">Review from {{ First Name }}</div>
-                <div class="card-body text-secondary">
-                    <p class="text-warning">Rating: {{ Rating }}/5</p>
-                    <p>{{ Review }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="ccol-sm-12 col-md-12 col-lg-6">
-            <div class="card border-primary m-2">
-                <div class="card-header text-primary">Review from {{ First Name }}</div>
-                <div class="card-body text-secondary">
-                    <p class="text-warning">Rating: {{ Rating }}/5</p>
-                    <p>{{ Review }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card border-primary m-2">
-                <div class="card-header text-primary">Review from {{ First Name }}</div>
-                <div class="card-body text-secondary">
-                    <p class="text-warning">Rating: {{ Rating }}/5</p>
-                    <p>{{ Review }}</p>
-                </div>
-            </div>
-        </div>
-
+        {{#each hauskeepr.reviews as |review|}}
+            {{> review-info review}}
+        {{/each}}
     </div>
 
 </div>
+
+<script src="/javascript/booking.js"></script>

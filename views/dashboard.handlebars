@@ -27,8 +27,13 @@
                         {{/if}}
                     </h6>
                     <h6 class="card-subtitle text-secondary mb-2">${{hourly_rate}} /hour</h6>
-                    <button type="button" class="btn btn-primary btn-sm">Book Now</button>
-                    <button type="button" data-name="{{ hauskeepr.profession.profession_name }}" data-email="{{ hauskeepr.email }}" id="emailbtn" class="btn btn-primary btn-sm">Email Me</button>
+                    <form name="book-now">
+                        <input type="text" value="{{hauskeepr.id}}" class="hauskeeprid">
+                        <a href="/booking/{{hauskeepr.id}}" class="edit-link">
+                            <button type="button" class="btn btn-primary btn-sm booknowbtn" id="bookbtn">Book Now</button>
+                        </a>
+                        <button type="button" data-name="{{ hauskeepr.profession.profession_name }}" data-email="{{ hauskeepr.email }}" id="emailbtn" class="btn btn-primary btn-sm">Email Me</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -37,4 +42,5 @@
 
 </div>
 
-<script src="/javascript/emailkeepr.js"></script>;
+<script src="/javascript/emailkeepr.js"></script>
+<script src="/javascript/booking.js"></script>

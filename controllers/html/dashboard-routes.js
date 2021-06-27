@@ -30,7 +30,6 @@ router.get('/', (req, res) => {
         })
         .then(dbData => {
             const hauskeeprs = dbData.map(hauskeepr => hauskeepr.get({ plain: true }));
-            console.log(dbData);
             res.render('dashboard', {
                 hauskeeprs,
                 loggedIn: req.session.loggedIn

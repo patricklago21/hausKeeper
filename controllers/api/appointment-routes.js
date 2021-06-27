@@ -27,14 +27,16 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Appointment.create({
     datetime: req.body.datetime,
-    client_id: req.body.client_id,
+    client_id: req.session.user_id,
     hauskeepr_id: req.body.hauskeepr_id,
     notes: req.body.notes,
     status: req.body.status,
     hours: req.body.hours,
     total_cost: req.body.total_cost
   })
-  .then(dbData => res.json(dbData))
+  .then(dbData => {
+    res.json(dbData);
+  })
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
