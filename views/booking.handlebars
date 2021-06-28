@@ -10,8 +10,24 @@
                     <label for="appointment_date">Appointment Date</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="appointment_time" id="appointment_time" class="form-control">
+                
+                    <input type="text" name="appointment_time" id="appointment_time" class="form-control timepicker">
                     <label for="appointment_time">Appointment Time</label>
+
+                    <script>
+                        $('.timepicker').timepicker({
+                            timeFormat: 'h:mm p',
+                            interval: 60,
+                            minTime: '8',
+                            maxTime: '20',
+                            defaultTime: '11',
+                            startTime: '8',
+                            dynamic: false,
+                            dropdown: true,
+                            scrollbar: true
+                        });
+                    </script>
+
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="appointment_hours" id="appointment_hours" class="form-control">
