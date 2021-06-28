@@ -1,5 +1,6 @@
-const emailbtn = document.getElementById("emailbtn")
-emailbtn.addEventListener("click", function() {
+const emailbtn = document.getElementById("#emailbtn")
+
+emailbtn.addEventListener("submit", function() {
     const email = emailbtn.dataset.email;
     const name = emailbtn.dataset.name;
     fetch("/api/contact", {

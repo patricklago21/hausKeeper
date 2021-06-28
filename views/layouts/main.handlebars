@@ -27,8 +27,15 @@
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="menu">
                 <li><a href="/support">Support</a></li>
+                
+                
+                {{#if loggedIn}}
+                <li><a href="/">Logout</a></li>
+                {{else}}
                 <li><a href="/login">Login</a></li>
                 <li><a href="/signup">Signup</a></li>
+                {{/if}}
+                
             </ul>
         </div>
     </nav>
