@@ -5,19 +5,19 @@ const Review = require('./Review');
 const Appointment = require('./Appointment');
 const Profession = require('./Profession');
 
-Client.hasMany(Review, {
-    foreignKey: 'client_id'
-});
-
-Hauskeepr.hasMany(Review, {
-    foreignKey: 'hauskeepr_id'
-});
-
 Review.belongsTo(Client, {
     foreignKey: 'client_id'
 });
 
 Review.belongsTo(Hauskeepr, {
+    foreignKey: 'hauskeepr_id'
+});
+
+Client.hasMany(Review, {
+    foreignKey: 'client_id'
+});
+
+Hauskeepr.hasMany(Review, {
     foreignKey: 'hauskeepr_id'
 });
 

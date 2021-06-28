@@ -123,6 +123,7 @@ router.post('/login', (req, res) => {
       // declare session variables
       req.session.user_id = dbData.id;
       req.session.username = dbData.username;
+      req.session.email = dbData.email;
       req.session.loggedIn = true;
       res.json({ user: dbData, message: 'You are now logged in!' });
     });

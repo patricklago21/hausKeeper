@@ -2,15 +2,17 @@
     <div class="row py-lg-5 border-bottom">
         <div class="col-lg-6 col-md-8 mx-auto justify-content-center text-center">
             <h2 class="fw-light m-1">Search for housekeepers near you!</h2>
-            <input type="text" class="form-control m-1" placeholder="City, State">
-            <button type="button" class="btn btn-outline-secondary m-1">Search</button>
+            <form id="search-form">
+                <input id="query" type="text" class="form-control m-1" placeholder="Enter a name, username, email or city">
+                <button id="search-button" type="submit" class="btn btn-outline-secondary m-1">Search</button>
+            </form>
         </div>
     </div>
 
 
     <!-- hauskeepr cards -->
-
     <div class="row">
+<<<<<<< HEAD
         {{#each hauskeeprs as |hauskeepr|}}
 
         <div class="col-sm-12 col-md-12 col-lg-4">
@@ -34,8 +36,24 @@
             </div>
         </div>
         {{/each}}
+=======
+        {{#if hauskeeprs}}
+            {{#each hauskeeprs as |hauskeepr|}}
+                {{> hauskeepr-info hauskeepr}}
+            {{/each}}
+        {{else}}
+       <div class="container">
+           <h5>Your search yielded no results</h5>
+       </div>
+        {{/if}}
+>>>>>>> 739dccf0127795d9a4b43ec930f55f451db33738
     </div>
 
 </div>
 
+<<<<<<< HEAD
 <script src="/javascript/emailkeepr.js"></script>;
+=======
+<script src="/javascript/emailkeepr.js"></script>
+<script src="/javascript/search.js"></script>
+>>>>>>> 739dccf0127795d9a4b43ec930f55f451db33738

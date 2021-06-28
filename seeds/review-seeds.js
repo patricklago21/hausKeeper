@@ -4,7 +4,7 @@ const { Review } = require('../models');
 const reviewdata = [
   {
     client_id: 3,
-    hauskeepr_id: 3, 
+    hauskeepr_id: 1, 
     review: 'Ariel is great! I love how detailed and fast she was while cleaning my water fountain. She used her tail? To sweep, very efficient!',
     stars: 5
   }
