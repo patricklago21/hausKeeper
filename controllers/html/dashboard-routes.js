@@ -1,9 +1,10 @@
 const sequelize = require('../../config/connection');
 const router = require('express').Router();
 const { Hauskeepr, Profession, Review, Appointment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // render dashboard page
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Hauskeepr.findAll({
             attributes: {
                 exclude: ['password'],
