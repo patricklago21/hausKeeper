@@ -6,28 +6,12 @@
             <p>Hourly rate: ${{hauskeepr.hourly_rate}}</p>
             <form name="book-form" class="book-form">
                 <div class="form-floating mb-3">
-                    <input type="text" name="appointment_date" id="appointment_date" class="form-control" data-provide="datepicker">
+                    <input type="text" name="appointment_date" id="appointment_date" class="form-control">
                     <label for="appointment_date">Appointment Date</label>
                 </div>
                 <div class="form-floating mb-3">
-                
                     <input type="text" name="appointment_time" id="appointment_time" class="form-control timepicker">
                     <label for="appointment_time">Appointment Time</label>
-
-                    <script>
-                        $('.timepicker').timepicker({
-                            timeFormat: 'h:mm p',
-                            interval: 60,
-                            minTime: '8',
-                            maxTime: '20',
-                            defaultTime: '11',
-                            startTime: '8',
-                            dynamic: false,
-                            dropdown: true,
-                            scrollbar: true
-                        });
-                    </script>
-
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="appointment_hours" id="appointment_hours" class="form-control">
@@ -47,11 +31,14 @@
         </div>
     </div>
 
-    <!-- hauskeepr cards -->
-    <div class="row">
+    {{!-- review cards --}}
+    <div class="container">
+        <h3>Reviews</h3>
+        <div class="row">
         {{#each hauskeepr.reviews as |review|}}
             {{> review-info review}}
         {{/each}}
+        </div>
     </div>
 
 </div>

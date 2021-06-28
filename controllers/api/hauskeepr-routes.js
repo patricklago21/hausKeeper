@@ -17,7 +17,14 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Review,
-        attributes: ['id','review','stars','createdAt','updatedAt']
+        attributes: {
+          include: ['id','review','client_id','stars','createdAt','updatedAt',
+            [
+              sequelize.literal('(SELECT username FROM client WHERE client.id = reviews.client_id)'),
+              'client_username'
+            ]
+          ]
+        }
       },
       {
         model: Appointment,
@@ -52,7 +59,14 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Review,
-        attributes: ['id','review','stars','createdAt','updatedAt']
+        attributes: {
+          include: ['id','review','client_id','stars','createdAt','updatedAt',
+            [
+              sequelize.literal('(SELECT username FROM client WHERE client.id = reviews.client_id)'),
+              'client_username'
+            ]
+          ]
+        }
       },
       {
         model: Appointment,
