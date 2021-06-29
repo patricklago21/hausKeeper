@@ -1,8 +1,9 @@
 <div class="container">
     <div class="row py-lg-5 border-bottom">
         <div class="col-lg-6 col-md-8 mx-auto justify-content-center text-center">
-            <h2 class="fw-light m-1">{{ hauskeepr.first_name}}</h2>
+            <h2 class="fw-light text-primary m-1">{{ hauskeepr.first_name}} {{ hauskeepr.first_name}}</h2>
             <h3 class="fw-light m-1">{{ hauskeepr.profession.profession_name }}</h3>
+            <h5>Username: {{hauskeepr.username}}</h5>
             <p>Hourly rate: ${{hauskeepr.hourly_rate}}</p>
             <form name="book-form" class="book-form">
                 <div class="form-floating mb-3">
@@ -27,6 +28,7 @@
                 </div>
                 <input type="hidden" name="hourly_rate" id="hourly_rate" value="{{hauskeepr.hourly_rate}}">
                 <button type="submit" class="btn btn-primary m-1">Book Now</button>
+                <a class="btn btn-secondary" href="/dashboard">Cancel</a>
             </form>
         </div>
     </div>
@@ -35,12 +37,15 @@
     <div class="container">
         <h3>Reviews</h3>
         <div class="row">
-        {{#each hauskeepr.reviews as |review|}}
-            {{> review-info review}}
-        {{/each}}
+        {{#if hauskeepr.reviews}}
+            {{#each hauskeepr.reviews as |review|}}
+                {{> review-info review}}
+            {{/each}}
+        {{else}}
+            <h5 class="text-primary">{{ hauskeepr.first_name}} does not have reviews yet...</h5>
+        {{/if}}
         </div>
     </div>
-
 </div>
 
 <script src="/javascript/booking.js"></script>
