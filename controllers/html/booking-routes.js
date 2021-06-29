@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { Hauskeepr, Profession, Review, Appointment, Client } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/success', (req,res) => {
+router.get('/success', withAuth, (req,res) => {
   res.render('success', {});
 });
 
