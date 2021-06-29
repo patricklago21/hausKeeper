@@ -3,7 +3,7 @@
         <div class="card-header">{{profession.profession_name}}</div>
         <div class="card-body text-primary text-center">
             <h6 class="ccard-title">{{username}}</h6>
-            <h5 class="card-subtitle text-secondary mb-2">{{first_name}} {{last_name}}</h5>
+            <h5 class="card-subtitle mb-2">{{first_name}} {{last_name}}</h5>
             <h6 class="card-subtitle text-secondary mb-2">City: {{city}}</h6>
             <h6 class="card-subtitle text-secondary mb-2">Rating: 
                 {{#if rating}} 
@@ -14,10 +14,14 @@
             <h6 class="card-subtitle text-secondary mb-2">${{hourly_rate}} /hour</h6>
             <form name="book-now">
                 <input type="hidden" value="{{id}}" class="hauskeeprid">
-                <a href="/booking/{{id}}" class="edit-link">
-                    <button type="button" class="btn btn-primary btn-sm booknowbtn" id="bookbtn">Book Now</button>
-                </a>
+                <button type="button" class="btn btn-primary btn-sm booknowbtn" id="bookbtn">Book Now</button>
                 <button type="button" data-name="{{profession.profession_name}}" data-email="{{ email }}" id="emailbtn" class="btn btn-primary btn-sm">Email Me</button>
+                <script>
+                    document.querySelector('#bookbtn').addEventListener('click', function(event) {
+                        event.preventDefault();
+                        document.location.replace('/booking/{{id}}');
+                    });
+                </script>
             </form>
         </div>
     </div>

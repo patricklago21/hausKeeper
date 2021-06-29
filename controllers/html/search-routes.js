@@ -13,8 +13,7 @@ router.get('/:q', withAuth, (req, res) => {
                     {email: { [Op.like]: '%' + req.params.q + '%' }},
                     {first_name: { [Op.like]: '%' + req.params.q + '%' }},
                     {last_name: { [Op.like]: '%' + req.params.q + '%' }},
-                    {city: { [Op.like]: '%' + req.params.q + '%' }},
-                    // {profession_name: { [Op.like]: '%' + req.params.q + '%' }}
+                    {city: { [Op.like]: '%' + req.params.q + '%' }}
                 ]
             },
             attributes: {
