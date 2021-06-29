@@ -3,7 +3,7 @@ const { Hauskeepr } = require('../models');
 
 const hauskeeprdata = [{
         username: 'anghiari',
-        email: 'anghiari123456@gmail.com',
+        email: 'lou.arnaut@gmail.com',
         password: 'p@55w0rd',
         first_name: 'leonardo',
         last_name: 'da vinci',
