@@ -1,5 +1,26 @@
 $(function () {
-  $("#appointment_date").datepicker({minDate: 1});
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let hh = String(today.getHours()).padStart(2, '0');
+  let yyyy = today.getFullYear();
+
+  today = mm + '/' + dd + '/' + yyyy;
+  $("#appointment_date").datepicker({
+    minDate: 1,
+    defaultDate: today
+  });
+  $('.timepicker').timepicker({
+      timeFormat: 'h:mm p',
+      interval: 60,
+      minTime: '8',
+      maxTime: '20',
+      defaultTime: hh,
+      startTime: '8',
+      dynamic: true,
+      dropdown: true,
+      scrollbar: true
+  });
 });
 
 async function notifyHausKeepr(hauskeepr_id) {

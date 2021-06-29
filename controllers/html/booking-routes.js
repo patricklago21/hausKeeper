@@ -1,9 +1,10 @@
 const sequelize = require('../../config/connection');
 const router = require('express').Router();
 const { Hauskeepr, Profession, Review, Appointment, Client } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // render booking page
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   Hauskeepr.findOne({
     where: { id: req.params.id },
     attributes: { 
@@ -18,7 +19,14 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Review,
-        attributes: ['id','client_id','review','stars','createdAt','updatedAt']
+        attributes: {
+          include: ['id','review','client_id','stars','createdAt','updatedAt',
+            [
+              sequelize.literal('(SELECT username FROM client WHERE client.id = reviews.client_id)'),
+              'client_username'
+            ]
+          ]
+        }
       },
       {
         model: Appointment,
