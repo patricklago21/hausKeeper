@@ -3,6 +3,10 @@ const router = require('express').Router();
 const { Hauskeepr, Profession, Review, Appointment, Client } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/success', withAuth, (req,res) => {
+  res.render('success', {});
+});
+
 // render booking page
 router.get('/:id', withAuth, (req, res) => {
   Hauskeepr.findOne({
