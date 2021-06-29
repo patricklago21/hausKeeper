@@ -12,31 +12,6 @@
 
     <!-- hauskeepr cards -->
     <div class="row">
-<<<<<<< HEAD
-        {{#each hauskeeprs as |hauskeepr|}}
-
-        <div class="col-sm-12 col-md-12 col-lg-4">
-
-            <div class="card border-primary m-2">
-
-                <div class="card-header">{{hauskeepr.profession.profession_name}}</div>
-                <div class="card-body text-primary text-center">
-                    <h5 class="card-title">{{hauskeepr.first_name}} {{hauskeepr.last_name}}</h5>
-                    <h6 class="card-subtitle text-secondary mb-2">Rating: 
-                        {{#if rating}} 
-                             {{rating}} &#11088;
-                        {{else}} Not yet rated
-                        {{/if}}
-                    </h6>
-                    <h6 class="card-subtitle text-secondary mb-2">${{hourly_rate}} /hour</h6>
-                    <button type="submit" class="btn btn-primary btn-sm">Book Now</button>
-                    <button type="submit" data-email="{{ hauskeepr.email }}" id="emailbtn" class="btn btn-primary btn-sm">Email Me</button>
-
-                </div>
-            </div>
-        </div>
-        {{/each}}
-=======
         {{#if hauskeeprs}}
             {{#each hauskeeprs as |hauskeepr|}}
                 {{> hauskeepr-info hauskeepr}}
@@ -46,14 +21,8 @@
            <h5>Your search yielded no results</h5>
        </div>
         {{/if}}
->>>>>>> 739dccf0127795d9a4b43ec930f55f451db33738
     </div>
 
 </div>
 
-<<<<<<< HEAD
 <script src="/javascript/emailkeepr.js"></script>;
-=======
-<script src="/javascript/emailkeepr.js"></script>
-<script src="/javascript/search.js"></script>
->>>>>>> 739dccf0127795d9a4b43ec930f55f451db33738
