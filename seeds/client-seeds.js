@@ -53,6 +53,19 @@ const clientdata = [
     city: 'Bikini Bottom',
     zip_code: '00345',
     state: 'HI'
+  },
+  {
+    username: 'patricklago21',
+    email: 'patricklago21@gmail.com',
+    password: 'password',
+    first_name: 'Patrick',
+    last_name: 'Lago',
+    date_of_birth: '08/17/1882',
+    address_line_1: '130 Coral St',
+    address_line_2: '',
+    city: 'Oakland',
+    zip_code: '00345',
+    state: 'HI'
   }
 ];
 
