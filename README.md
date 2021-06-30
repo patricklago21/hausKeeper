@@ -13,11 +13,12 @@ Our mission is to provide economic empowerment in this changing world. TheKeeprs
 The hausKeepr app is designed to connect housekeepers to client or working professionals, allowing for an easy and convenient way of getting assistance on house work. 
 
 1. [ hausKeepr Demo. ](#demo)
-2. [ User Story. ](#story)
-3. [ User Acceptance Criteria. ](#uac)
-4. [ Database Model. ](#mod)
-5. [ Association. ](#ass)
-6. [ Special Instructions. ](#how)
+2. [ Project Screenshots. ](#screenshots)
+3. [ User Story. ](#story)
+4. [ User Acceptance Criteria. ](#uac)
+5. [ Database Model. ](#mod)
+6. [ Association. ](#ass)
+7. [ Special Instructions. ](#how)
 
 <a name="demo"></a>
 
@@ -36,6 +37,9 @@ Walkthrough Videos:
 5. GET routes for a single record.
 
 6. POST, PUT, and DELETE routes.
+
+<a name="screenshots"></a>
+## Screenshots 
 
 <a name="story"></a>
 ## User Story
