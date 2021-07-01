@@ -26,13 +26,14 @@
                     </div>
     
                     <div class="col-12">
-                        <label for="username" class="form-label">Username</label>
+                        <label for="username" class="form-label">Username <span id="user-validation"></span></label>
                         <div class="input-group has-validation">
                             <input type="text" class="form-control" id="username" placeholder="Username" required>
                             <div class="invalid-feedback">
                                 Your username is required.
                             </div>
                         </div>
+                        <span class="username-feedback error"></span>
                     </div>
 
                     <div class="col-12">
@@ -46,11 +47,12 @@
                     </div>
     
                     <div class="col-12">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">Email <span id="email-validation"></span></label>
                         <input type="email" class="form-control" id="email" placeholder="you@example.com">
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
+                        <span class="email-feedback error"></span>
                     </div>
     
                     <div class="col-12">
@@ -69,7 +71,7 @@
     
                     <div class="col-12">
                         <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" placeholder="City">
+                        <input type="text" class="form-control" id="city" placeholder="City" required>
                     </div>
     
                     <div class="col-md-6">
@@ -101,9 +103,8 @@
                     </div>
     
                 </div>
-    
+                 <span class="form-validation error"></span>
                 <hr class="my-4">
-    
                 <button class="w-100 btn btn-primary btn-lg mb-4" type="submit">Create Account</button>
             </form>
         </div>

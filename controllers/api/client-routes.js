@@ -134,7 +134,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-// POST /api/users/logout
+// POST /api/clients/logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -144,6 +144,50 @@ router.post('/logout', (req, res) => {
   else {
     res.status(404).end();
   }
+// GET /api/clients/username/:username
+router.get('/username/:username', (req, res) => {
+  Client.findOne({
+      attributes: { 
+          exclude: ['password']
+      },
+      where: {
+        username: req.params.username
+      }
+    })
+  .then(dbUserData => {
+      if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with this username' });
+      return;
+      }
+      res.json(dbUserData);
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
+
+// GET /api/clients/email/:email
+router.get('/email/:email', (req, res) => {
+  Client.findOne({
+      attributes: { 
+          exclude: ['password']
+      },
+      where: {
+        email: req.params.email
+      }
+    })
+  .then(dbUserData => {
+      if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with this email' });
+      return;
+      }
+      res.json(dbUserData);
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 module.exports = router;
