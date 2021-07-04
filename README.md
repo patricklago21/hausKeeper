@@ -15,9 +15,8 @@ The hausKeepr app is designed to connect housekeepers to client or working profe
 1. [ hausKeepr Demo. ](#demo)
 2. [ User Story. ](#story)
 3. [ User Acceptance Criteria. ](#uac)
-4. [ Database Model. ](#mod)
-5. [ Association. ](#ass)
-6. [ Special Instructions. ](#how)
+4. [ Association. ](#ass)
+5. [ Special Instructions. ](#how)
 
 <a name="demo"></a>
 
@@ -63,75 +62,6 @@ THEN the data for each of these routes is displayed in a formatted JSON
 
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
-
-<a name="mod"></a>
-## Database Models
-
-- `Category`
-
-    - `id`
-        - Integer
-        - Doesn't allow null values
-        - Set as primary key
-        - Uses auto increment
-
-    - `category_name`
-        - String
-        - Doesn't allow null values
-
-- `Product`
-
-    - `id`
-        - Integer
-        - Doesn't allow null values
-        - Set as primary key
-        - Uses auto increment
-
-    - `product_name`
-        - String
-        - Doesn't allow null values
-
-    - `price`
-        - Decimal
-        - Doesn't allow null values
-        - Validates that the value is a decimal
-
-    - `stock`
-        - Integer
-        - Doesn't allow null values
-        - Set a default value of 10
-        - Validates that the value is numeric
-
-    - `category_id`
-        - Integer
-        - References the category model's id
-
-- `Tag`
-
-    - `id`
-        - Integer
-        - Doesn't allow null values
-        - Set as primary key
-        - Uses auto increment
-
-    - `tag_name`
-        - String
-
-- `ProductTag`
-
-    - `id`
-        - Integer
-        - Doesn't allow null values
-        - Set as primary key
-        - Uses auto increment
-
-    - `product_id`
-        - Integer
-        - References the product model's id
-
-    - `tag_id`
-        - Integer
-        - References the tag model's id
 
 <a name="ass"></a>
 ## Associations
