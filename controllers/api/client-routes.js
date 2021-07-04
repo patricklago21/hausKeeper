@@ -144,6 +144,8 @@ router.post('/logout', (req, res) => {
   else {
     res.status(404).end();
   }
+});
+
 // GET /api/clients/username/:username
 router.get('/username/:username', (req, res) => {
   Client.findOne({
