@@ -15,7 +15,7 @@ Our mission is to provide economic empowerment in this changing world. TheKeeprs
 
 # Description
 
-HausKeepr is a gig-economy app designed to connect housekeepers to client or working professionals, allowing for an easy and convenient way of getting assistance on house work. 
+HausKeepr is a gig-economy app designed to connect housekeepers to clients or working professionals, allowing for an easy and convenient way of getting assistance on house work. 
 
 1. [MVP Link & Screenshots](#mvp)
 2. [The User Story ](#story)
@@ -23,7 +23,7 @@ HausKeepr is a gig-economy app designed to connect housekeepers to client or wor
 4. [Database Models ](#mod)
 5. [Associations ](#ass)
 6. [Special Instructions ](#how)
-7. [The Keeprs Team](#team)
+7. [TheKeeprs Team](#team)
 
 <a name="mvp"></a>
 ## MVP Link & Screenshots
@@ -31,22 +31,22 @@ HausKeepr is a gig-economy app designed to connect housekeepers to client or wor
 See hausKeepr in action here: https://hauskeepr-mvp.herokuapp.com/
 
 ### Homepage
-First-time users will land on this page. If users click on *Book and Appointment* they will be redirected to login. If they are already logged in, then the dashboard screen will be displayed.
+First-time users will land on this page. If users clicks on *Book an appointment*, they will be redirected to login. If the users are already logged in, then they will be taken to the dashboard.
 
 ![Homepage](./readme-assets/hauskeepr-homepage.png)
 
 ### Logging in
-In order to login, users must enter their username and password on this screen.
+In order to login, users must enter username and password on this screen.
 
 ![Login](./readme-assets/hauskeepr-login.png)
 
 ### Signing up
-If users are not registered, they will have to sign up first via this page.
+If users are not yet registered, they will have to sign up first via this page.
 
 ![Signup](./readme-assets/hauskeepr-signup.png)
 
 ### Searching for a hauskeepr
-On the dashboard page, users can search for a hauskeepr. We are using a single-box search, or Google-style searching. This feature searches on any field on the hauskeepr record, so users don't have to worry about finding the specific field on which they want to search.
+On the dashboard page, users can search for a hauskeepr. We are using a single-box search, or Google-style searching. This feature searches on any field on the hauskeepr record, so users will not have to worry about finding the specific field on which they want to search.
 
 ![Search](./readme-assets/hauskeepr-search.png)
 
@@ -65,10 +65,10 @@ SO THAT I can get things done while having life balance​
 <a name="uac"></a>
 ## Acceptance Criteria
 
-GIVEN a housekeeper finding app
+GIVEN a housekeeper search app
 
 WHEN I login
-THEN a home page for me to book and appointment is displayed
+THEN a home page opens up for me to book and appointment is displayed
 
 WHEN I click on book appointment
 THEN a dashboard with search functionality is displayed
@@ -89,7 +89,7 @@ WHEN I click on signup
 THEN a signup form is displayed
 
 WHEN I submit the signup form
-THEN my user is created and I'm redirected to Login
+THEN my account is created and i will be redirected to login
 
 <a name="mod"></a>
 ## Database Models
