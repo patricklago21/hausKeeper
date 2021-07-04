@@ -121,6 +121,11 @@ a {
     top: 0;
 }
 
+.img-thumbnail {
+    border: 0px;
+}
+
+
 /* updated colours */
 
 .btn-primary {
@@ -148,12 +153,14 @@ a {
 }
 
 .error {
-    color:red;
+    color: red;
 }
 
 .ok {
     color: green;
 }
+
+
 /* 48em = 768px */
 
 @media (min-width: 48em) {
