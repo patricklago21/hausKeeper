@@ -58,9 +58,9 @@ Once a client finds the hauskeepr they want to hire, they can click on *Book now
 <a name="story"></a>
 ## User Story
 
-AS A busy professional​
-I WANT to find skilled housekeepers​
-SO THAT I can get things done while having life balance​
+AS A busy professional
+I WANT to find skilled housekeepers
+SO THAT I can get things done while having life balance
 
 <a name="uac"></a>
 ## Acceptance Criteria
